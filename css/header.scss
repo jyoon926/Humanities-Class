@@ -1,0 +1,123 @@
+$color: #353535;
+$red: rgb(224,62,62);
+header {
+    position: fixed;
+    width: 100vw;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    box-sizing: border-box;
+    background: white;
+    z-index: 100;
+    margin: 0;
+    transition-duration: .4s;
+    top: 0;
+    left: 0;
+    .logo {
+        font-weight: 400;
+        font-size: 25px;
+        text-decoration: none;
+    }
+    ul {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .link {
+            font-weight: 400;
+            font-size: 18px;
+            text-decoration: none;
+            margin-left: 40px;
+            line-height: 1;
+            border-bottom: 2px solid white;
+            padding: 2px;
+            transition-duration: .4s;
+            &:hover {
+                border-bottom: 2px solid $color;
+            }
+        }
+        .apply {
+            font-weight: 400;
+            font-size: 18px;
+            text-decoration: none;
+            margin-left: 40px;
+            line-height: 1;
+            background: $color;
+            color: white;
+            padding: 10px 30px 13px 30px;
+            transition-duration: .4s;
+            &:hover {
+                background: #000;
+            }
+        }
+    }
+}
+
+input {
+    position: absolute;
+    top: -100px;
+}
+label {
+    position: fixed;
+    display: none;
+}
+
+
+@media screen and (max-width: 1050px) {
+    header {
+        height: 60px;
+        padding: 0 30px;
+        ul {
+        position: fixed;
+        top: 0; left: 100vw;
+        height: 100%;
+        width: 100vw;
+        background: white;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 101;
+        transition-duration: .5s;
+            .link {
+                font-size: 40px;
+                padding: 20px;
+                margin-left: 0;
+                border: none;
+                &:hover {
+                    border: none;
+                }
+            }
+            .apply {
+                font-size: 40px;
+                margin-left: 0;
+                background: $color;
+                color: white;
+                padding: 13px 50px 20px 50px;
+                margin: 20px 0;
+                transition-duration: .4s;
+                &:hover {
+                    background: #000;
+                }
+            }
+        }
+    }
+    label {
+        transition-duration: .4s;
+        z-index: 200;
+        display: flex;
+        height: 30px;
+        width: 30px;
+        top: 5px;
+        right: 20px;
+        padding: 10px;
+        img {
+            height: 30px;
+            width: 30px;
+        }
+    }
+    .checkbox:checked ~ ul {
+        left: 0;
+    }
+}
